@@ -1,0 +1,63 @@
+body { 
+    background: url(../img/brushed.png); 
+}
+h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    background-color: #30317a;
+    color: white;
+    padding: 7px 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 9px 9px 0 0;
+    border: solid 0px #343434;
+    border-bottom-width: 1px;
+}
+.chat-window {
+    width: 480px;
+    height: 500px;
+    background-color: #fff;
+    margin: 100px auto;
+    border: 1px solid #343434;
+    border-radius: 10px;
+}
+.conversation-window {
+    height: 384px;
+    padding: 5px 5px 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.conversation {
+    background-color: #efefef;
+    padding: 10px 10px 0;
+    min-height: 369px;
+    max-width: 100%;
+}
+.conversation p {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    margin: 0 0 5px;
+    text-indent: -70px;
+    padding-left: 70px;    
+}
+.input-box {
+    padding: 5px;
+}
+.input-box input[type=text] {
+    width: 390px;
+    border: 1px solid #dedede;
+    height: 30px;
+    outline: 0;
+    padding-left: 10px;
+    border-radius: 0 0 0 10px;
+}
+.input-box input[type=button] {
+    width: 68px;
+    height: 34px;
+    border-radius: 0 0 10px 0;
+    border-width: 0px;
+    outline: 0;
+    background-color: #30317a;
+    color: white;
+}
