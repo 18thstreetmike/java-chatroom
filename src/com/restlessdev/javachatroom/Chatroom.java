@@ -63,13 +63,21 @@ public class Chatroom {
      */
     public void addMessage(ChatroomMessage crm) {
         this.messages.add(crm);
+        Vector<Session> sessionsToRemove = new Vector();
         for (Session participant : this.participants) {
-            try {
-                participant.getRemote().sendString(crm.print());
-            } catch (IOException ex) {
-                this.participants.remove(participant);
-                System.out.println("Websocket Error " + ex.getMessage());
+            if (participant.isOpen()) {
+                try {
+                    participant.getRemote().sendString(crm.print());
+                } catch (IOException ex) {
+                    this.participants.remove(participant);
+                    System.out.println("Websocket Error " + ex.getMessage());
+                }
+            } else {
+                sessionsToRemove.add(participant);
             }
+        }
+        for(Session participant : sessionsToRemove) {
+            this.participants.remove(participant);
         }
     }
     

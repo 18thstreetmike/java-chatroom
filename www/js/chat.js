@@ -7,6 +7,7 @@ $(document).ready(function() {
     connection.onmessage = function(msg) {
         if (msg.data !== 'keep-alive') {
             $(".conversation").append(msg.data);
+            $('.conversation-window').scrollTop($('.conversation-window')[0].scrollHeight);
         }
     }
     connection.onclose = function() {
@@ -21,7 +22,7 @@ $(document).ready(function() {
                 connection.send($('.message').val());
                 $('.message').val('');
             } catch (exception) {
-                console.log('Websocket error: ' + exception.getMessage());
+                console.log('Websocket error: ' + exception.message);
             }
         }
     });
